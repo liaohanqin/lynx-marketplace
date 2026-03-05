@@ -1,0 +1,13 @@
+{
+  "PreToolUse": [
+    {
+      "matcher": "Bash",
+      "hooks": [
+        {
+          "type": "command",
+          "command": "${CODEBUDDY_PLUGIN_ROOT}/hooks/pre-command"
+        }
+      ]
+    }
+  ]
+}
