@@ -1,0 +1,8 @@
+{
+  "name": "gh-enforcer",
+  "version": "1.0.0",
+  "description": "Enforces usage of GitHub CLI (gh) over git commands",
+  "hooks": {
+    "PreToolUse": "../hooks/pre-command"
+  }
+}

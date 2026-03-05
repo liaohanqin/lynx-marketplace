@@ -7,6 +7,12 @@
   "description": "My personal CodeBuddy plugin marketplace",
   "plugins": [
     {
+      "name": "gh-enforcer",
+      "description": "Enforces usage of GitHub CLI (gh) over git commands",
+      "version": "1.0.0",
+      "source": "./plugins/gh-enforcer"
+    },
+    {
       "name": "emacs-plugin",
       "description": "An emacs plugin configuration",
       "version": "1.0.0",

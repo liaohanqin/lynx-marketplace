@@ -1,0 +1,52 @@
+#!/bin/bash
+
+# 读取输入 JSON
+input=$(cat)
+
+# 解析事件名称和工具名称
+event_name=$(echo "$input" | jq -r '.hook_event_name // empty')
+tool_name=$(echo "$input" | jq -r '.tool_name // empty')
+
+# 仅处理 PreToolUse 事件且工具为 Bash 的情况
+if [[ "$event_name" == "PreToolUse" ]] && [[ "$tool_name" == "Bash" ]]; then
+    # 解析命令内容
+    command=$(echo "$input" | jq -r '.tool_input.command // empty')
+
+    # 检查是否为 git 命令 (匹配 "git " 开头或仅为 "git")
+    if [[ "$command" =~ ^git[[:space:]] ]] || [[ "$command" == "git" ]]; then
+        # 拒绝 git 命令
+        cat <<EOF
+{
+  "hookSpecificOutput": {
+    "hookEventName": "PreToolUse",
+    "permissionDecision": "deny",
+    "permissionDecisionReason": "为了规范操作，请使用 GitHub CLI (gh) 替代 git 命令。例如使用 'gh repo clone' 代替 'git clone'。"
+  }
+}
+EOF
+        exit 0
+    elif [[ "$command" =~ ^gh[[:space:]] ]] || [[ "$command" == "gh" ]]; then
+        # 询问 gh 命令 (作为安全检查，或根据用户偏好改为 allow)
+        # 用户原意是"asking for permission"，所以这里用 ask
+        cat <<EOF
+{
+  "hookSpecificOutput": {
+    "hookEventName": "PreToolUse",
+    "permissionDecision": "ask",
+    "permissionDecisionReason": "检测到 GitHub CLI 命令，请确认执行：$command"
+  }
+}
+EOF
+        exit 0
+    fi
+fi
+
+# 默认允许其他情况
+cat <<EOF
+{
+  "hookSpecificOutput": {
+    "hookEventName": "$event_name",
+    "permissionDecision": "allow"
+  }
+}
+EOF
