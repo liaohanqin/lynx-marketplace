@@ -1,0 +1,19 @@
+{
+  "name": "lynx-marketplace",
+  "owner": {
+    "name": "liaohanqin",
+    "email": "liaohanqin@qq.com"
+  },
+  "description": "My personal CodeBuddy plugin marketplace",
+  "plugins": [
+    {
+      "name": "emacs-plugin",
+      "description": "An emacs plugin configuration",
+      "version": "1.0.0",
+      "source": {
+        "source": "github",
+        "repo": "liaohanqin/emacs-skills"
+      }
+    }
+  ]
+}
