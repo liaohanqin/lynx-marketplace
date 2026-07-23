@@ -13,6 +13,12 @@
       "source": "./plugins/gh-enforcer"
     },
     {
+      "name": "wecom-doc",
+      "description": "通过 Playwright + 登录 Cookie 读取与写入企微文档（doc.weixin.qq.com）",
+      "version": "1.0.0",
+      "source": "./plugins/wecom-doc"
+    },
+    {
       "name": "emacs-plugin",
       "description": "An emacs plugin configuration",
       "version": "1.0.0",

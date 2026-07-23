@@ -1,0 +1,8 @@
+{
+  "name": "wecom-doc",
+  "description": "通过 Playwright + 登录 Cookie 读取与写入企微文档（doc.weixin.qq.com）",
+  "version": "1.0.0",
+  "author": {
+    "name": "liaohanqin"
+  }
+}
