@@ -1,0 +1,8 @@
+{
+  "name": "epub-bilingual",
+  "description": "将 EPUB 电子书翻译为中英对照版本（段落级交替），保留原书排版、图片与代码",
+  "version": "1.0.0",
+  "author": {
+    "name": "liaohanqin"
+  }
+}
