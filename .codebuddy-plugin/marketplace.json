@@ -27,7 +27,7 @@
     {
       "name": "godot-dev",
       "description": "Godot 游戏开发领域知识库：GDScript 规范与模板、玩家控制器、UI 分层、存档、输入映射、玩法设计，适配 tomyud1/godot-mcp 工具链",
-      "version": "1.0.1",
+      "version": "1.0.2",
       "source": "./plugins/godot-dev"
     },
     {
