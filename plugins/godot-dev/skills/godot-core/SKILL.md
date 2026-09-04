@@ -40,14 +40,16 @@ description: >
 
 | 意图 | 触发词 |
 |------|--------|
+| `setup_mcp` | 「安装 MCP / 部署 MCP / 配置 MCP / 连不上 / MCP 没连 / 安装 Godot MCP 插件 / setup mcp」 |
 | `new_game` | 「再来一个 / 新游戏 / 换一个游戏 / another game」 |
 | `make_game` | 「做一个 X / 帮我做个 X / make a X / build a X」（X 是游戏类型） |
 | `modify_game` | 「加 / 改 / 删 / 优化 / 调整 / 修复」+ 节点/场景/脚本/UI/角色/敌人/关卡/菜单 |
 
 判定优先级：
-1. 当前工作区无 `project.godot`（或用户明确说新建）→ `make_game`
-2. 已有 `project.godot` 且出现 `new_game` 词 → `new_game`
-3. 其他 → `modify_game`
+1. 出现 `setup_mcp` 关键词 → 分派给 `godot-setup`（处理 MCP 后端的安装/配置/就绪判断）
+2. 当前工作区无 `project.godot`（或用户明确说新建）→ `make_game`
+3. 已有 `project.godot` 且出现 `new_game` 词 → `new_game`
+4. 其他 → `modify_game`
 
 ## 场景处理
 
