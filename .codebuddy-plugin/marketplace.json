@@ -31,6 +31,12 @@
       "source": "./plugins/godot-dev"
     },
     {
+      "name": "wechat-minigame-dev",
+      "description": "微信小游戏开发领域知识库：项目初始化、登录鉴权、好友排行榜、虚拟支付与广告变现、网络通信、文件存储、性能优化、多平台适配、游戏引擎接入、代码分包、安全与云开发，以及微信官方设计规范",
+      "version": "1.0.0",
+      "source": "./plugins/wechat-minigame-dev"
+    },
+    {
       "name": "emacs-plugin",
       "description": "An emacs plugin configuration",
       "version": "1.0.0",
